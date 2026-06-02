@@ -1,9 +1,10 @@
-const heatmap = document.querySelector(".heatmap");
-
-if (heatmap) {
-  let phase = 0;
-  window.setInterval(() => {
-    phase = (phase + 1) % 32;
-    heatmap.style.backgroundPosition = `${phase}px 0, ${phase * 0.35}px 0, 0 0`;
-  }, 120);
-}
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (!target) {
+      return;
+    }
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});

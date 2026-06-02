@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <!-- Full-bleed opaque background: a single rounded rect leaves transparent corners → grey/white in PNG/Dock. -->
+  <rect width="1024" height="1024" fill="#000000"/>
+  <!-- ~5% larger waveform, centered on canvas -->
+  <g transform="translate(512 512) scale(1.05) translate(-512 -512)">
+    <!-- Bar 1 -->
+    <rect x="187" y="412" width="62" height="150" rx="31" ry="31" fill="#FFFFFF"/>
+    <!-- Bar 2 -->
+    <rect x="285" y="312" width="62" height="310" rx="31" ry="31" fill="#FFFFFF"/>
+    <!-- Bar 3 -->
+    <rect x="383" y="237" width="62" height="430" rx="31" ry="31" fill="#FFFFFF"/>
+    <!-- Bar 4 (tallest) -->
+    <rect x="481" y="172" width="62" height="570" rx="31" ry="31" fill="#FFFFFF"/>
+    <!-- Bar 5 -->
+    <rect x="579" y="282" width="62" height="490" rx="31" ry="31" fill="#FFFFFF"/>
+    <!-- Bar 6 -->
+    <rect x="677" y="342" width="62" height="250" rx="31" ry="31" fill="#FFFFFF"/>
+    <!-- Bar 7 -->
+    <rect x="775" y="422" width="62" height="155" rx="31" ry="31" fill="#FFFFFF"/>
+  </g>
+</svg>
