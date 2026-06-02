@@ -19,7 +19,8 @@
         <a href="#problem">Problem</a>
         <a href="#workflow">Workflow</a>
         <a href="#finder-tags">Finder Tags</a>
-        <a href="#privacy">Privacy</a>
+        <a href="#trust">Trust</a>
+        <a href="#faq">FAQ</a>
       </nav>
     </header>
 
@@ -29,9 +30,9 @@
           <p class="eyebrow">Native macOS lossless triage</p>
           <h1>Find fake lossless files before your next gig.</h1>
           <p class="lede">
-            Flaccer checks the audio inside the container. Drop tracks, folders,
-            playlists, or Rekordbox XML and get clear verdicts from local
-            spectrogram analysis.
+            Drop one track or a full library. Flaccer checks the actual spectral
+            content inside FLAC, WAV, AIFF, ALAC, MP3, AAC, playlists, and
+            Rekordbox XML, then groups results by verdict.
           </p>
           <div class="hero-actions">
             <a class="button primary" href="https://github.com/JZ1324/Flaccer">View GitHub</a>
@@ -101,15 +102,15 @@
           <h2>A .flac extension means nothing. The spectrogram never lies.</h2>
           <p>
             Online stores, promo channels, and old DJ folders can contain MP3s
-            upscaled and renamed to FLAC, WAV, or AIFF. The file size changes.
-            The missing high frequencies do not.
+            upscaled and renamed to FLAC, WAV, or AIFF. The file size goes up.
+            The missing top octave does not come back.
           </p>
         </div>
         <div class="proof-grid">
           <article>
             <span class="verdict fake">Fake lossless</span>
             <img src="assets/spectro-fake.png" alt="Fake lossless spectrogram with a hard high-frequency cutoff">
-            <div>
+            <div class="proof-caption">
               <strong>Cutoff 16.0 kHz</strong>
               <p>Hard upper-band cutoff. Likely lossy audio inside a lossless-looking file.</p>
             </div>
@@ -117,7 +118,7 @@
           <article>
             <span class="verdict lossless">Real lossless</span>
             <img src="assets/spectro-lossless.png" alt="Lossless spectrogram with energy up to Nyquist">
-            <div>
+            <div class="proof-caption">
               <strong>Energy to Nyquist</strong>
               <p>High-frequency content remains visible close to the top of the spectrum.</p>
             </div>
@@ -142,21 +143,23 @@
           <article>
             <small>Step 02</small>
             <h3>Get a verdict per file</h3>
-            <p>Flaccer analyzes spectral content, cutoff behavior, and high-band energy.</p>
+            <p>Flaccer checks spectral content, cutoff behavior, confidence, and high-band energy.</p>
             <ul class="result-list">
               <li><span>01 · Turbo Rosso.wav</span><b class="lossless">LOSSLESS</b></li>
               <li><span>02 · Across The Sun.wav</span><b class="medium">MEDIUM</b></li>
               <li><span>03 · Vocoder.mp3</span><b class="fake">FAKE</b></li>
+              <li><span>04 · Aera Prana.flac</span><b class="lossless">LOSSLESS</b></li>
             </ul>
           </article>
           <article>
             <small>Step 03</small>
             <h3>Act on what you find</h3>
-            <p>Filter suspicious files, inspect their spectrograms, copy paths, reveal, or export CSV.</p>
+            <p>Filter suspicious files, inspect the graph, copy paths, reveal, tag, or export CSV.</p>
             <ul class="action-list">
               <li><span>Filter</span><b>FAKE (4)</b></li>
               <li><span>Copy paths</span><b>⌘C</b></li>
               <li><span>Open spectrogram</span><b>↵</b></li>
+              <li><span>Export CSV</span><b>CSV</b></li>
             </ul>
           </article>
         </div>
@@ -169,6 +172,7 @@
           <p>
             Flaccer can replace Finder color tags with verdict colors: green for
             lossless, yellow for medium, red for fake, and gray for errors.
+            Open your music folder and the files are already marked.
           </p>
           <div class="tag-legend">
             <span><i class="green-dot"></i>Lossless WAV / AIFF / FLAC</span>
@@ -182,6 +186,10 @@
       <section class="section tools">
         <p class="eyebrow">DJ library friendly</p>
         <h2>Works with the folders and playlists you already use.</h2>
+        <p>
+          Import directly from Rekordbox XML, M3U/M3U8 playlists, or ordinary folders.
+          The point is not another library manager. The point is finding the bad files fast.
+        </p>
         <div class="logo-grid">
           <img src="assets/rekordbox-logo-spectro.png" alt="Rekordbox">
           <img src="assets/serato-logo-spectro.png" alt="Serato">
@@ -190,20 +198,90 @@
         </div>
       </section>
 
-      <section id="privacy" class="section privacy">
-        <div class="privacy-card">
-          <span class="private-badge">100% on-device</span>
+      <section id="trust" class="section trust">
+        <div class="trust-card">
+          <span class="badge muted">Spectral analysis</span>
+          <h2>Why you can trust the verdict.</h2>
+          <p>
+            Flaccer uses FFT-based frequency analysis to inspect the real audio content.
+            It does not trust the extension, bitrate label, file size, or metadata.
+          </p>
+          <div class="trust-metrics">
+            <div><strong>Cutoff</strong><span>Finds sudden high-frequency brickwalls.</span></div>
+            <div><strong>High Band</strong><span>Checks whether energy remains near Nyquist.</span></div>
+            <div><strong>Confidence</strong><span>Flags ambiguous files instead of pretending.</span></div>
+          </div>
+        </div>
+        <div class="trust-card green-card">
+          <span class="badge private">100% on-device</span>
           <h2>Your library never leaves your Mac.</h2>
           <p>
-            No uploads, no account, no network analysis. Flaccer runs locally with
+            No uploads, no account, no backend analysis. Flaccer runs locally with
             macOS audio decoding APIs and keeps the evidence on your machine.
           </p>
-          <ul>
-            <li>Works offline</li>
+          <ul class="check-list">
+            <li>Works fully offline</li>
             <li>No sign-up or tracking</li>
             <li>CSV export for audits</li>
             <li>Apple Silicon and Intel</li>
           </ul>
+        </div>
+      </section>
+
+      <section class="section community">
+        <p class="eyebrow">From the community</p>
+        <h2>What users find in real libraries.</h2>
+        <div class="quote-grid">
+          <article>
+            <div class="avatar yellow">C</div>
+            <p>“My FLAC library is now getting huge and I was looking for a reliable tool to perform a massive control of its integrity.”</p>
+            <span>Large library audit</span>
+          </article>
+          <article>
+            <div class="avatar green">A</div>
+            <p>“I loaded hundreds of tracks into it and it analyzed them quickly. The interface is simple and straightforward.”</p>
+            <span>Batch scanning</span>
+          </article>
+          <article>
+            <div class="avatar red">X</div>
+            <p>“It works the way I wanted other tools to work: drop files, see verdicts, inspect what matters.”</p>
+            <span>macOS workflow</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <div class="cta-card">
+          <p class="eyebrow">Launch build</p>
+          <h2>Scan before you play it out.</h2>
+          <p>
+            If one fake file is hiding in a release you were about to trust,
+            the scan already paid for itself.
+          </p>
+          <a class="button primary" href="https://github.com/JZ1324/Flaccer">Get Flaccer</a>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions DJs actually ask.</h2>
+        <div class="faq-list">
+          <details open>
+            <summary>Does Flaccer upload my music?</summary>
+            <p>No. Analysis happens locally on your Mac.</p>
+          </details>
+          <details>
+            <summary>Can it scan Rekordbox libraries?</summary>
+            <p>Yes. Import Rekordbox XML and Flaccer resolves the referenced local audio files.</p>
+          </details>
+          <details>
+            <summary>Does it support ALAC?</summary>
+            <p>Yes. ALAC/M4A is treated like any other audio file: the verdict comes from spectral evidence.</p>
+          </details>
+          <details>
+            <summary>Can I export results?</summary>
+            <p>Yes. Export CSV with verdict, cutoff, confidence, sample rate, and file paths.</p>
+          </details>
         </div>
       </section>
     </main>
