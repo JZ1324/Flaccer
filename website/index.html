@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flaccer - Find fake lossless files</title>
+    <meta
+      name="description"
+      content="Flaccer is a native macOS app for spotting fake lossless tracks, inspecting spectrogram evidence, and tagging suspicious files locally."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Flaccer home">
+        <img src="assets/flaccer-icon.png" alt="">
+        <span>Flaccer</span>
+      </a>
+      <nav>
+        <a href="#workflow">Workflow</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Native macOS audio triage</p>
+          <h1>Flaccer</h1>
+          <p class="hero-text">
+            Detect fake lossless files before your next set. Drop tracks, folders,
+            playlists, or Rekordbox XML and get local spectrogram evidence fast.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="../Flaccer.xcodeproj">Open Project</a>
+            <a class="secondary-action" href="#workflow">See Workflow</a>
+          </div>
+        </div>
+
+        <div class="app-window" aria-label="Flaccer interface preview">
+          <div class="window-bar">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="window-title">Flaccer</span>
+          </div>
+          <div class="app-shell">
+            <aside class="sidebar-preview">
+              <div class="status"><span></span> Local Only</div>
+              <div class="drop-preview">
+                <strong>Drop files or playlists</strong>
+                <small>.wav .aiff .mp3 .flac .aac .m3u .xml</small>
+              </div>
+              <div class="chips">
+                <span class="chip active">All 482</span>
+                <span class="chip fake">Fake 12</span>
+                <span class="chip medium">Medium 38</span>
+                <span class="chip lossless">Lossless 421</span>
+              </div>
+              <div class="track selected">
+                <span>Tal Fussman - Freedom Defines House.mp3</span>
+                <b class="pill fake-pill">Fake</b>
+              </div>
+              <div class="track">
+                <span>Olivia Dean - Loud.flac</span>
+                <b class="pill medium-pill">Medium</b>
+              </div>
+              <div class="track">
+                <span>SEU Worship - What A God.flac</span>
+                <b class="pill good-pill">Lossless</b>
+              </div>
+            </aside>
+
+            <section class="detail-preview">
+              <div class="detail-head">
+                <h2>Tal Fussman - Freedom Defines House.mp3</h2>
+                <span class="pill fake-pill">Fake</span>
+              </div>
+              <div class="metrics">
+                <div><small>Verdict</small><strong>FAKE</strong></div>
+                <div><small>Cutoff</small><strong>15.8 kHz</strong></div>
+                <div><small>Confidence</small><strong>100%</strong></div>
+              </div>
+              <div class="why">
+                <strong>Why: strong high-frequency cutoff.</strong>
+                <span>Upper band is mostly empty, matching a lossy transcode signature.</span>
+              </div>
+              <div class="spectrogram" aria-hidden="true">
+                <div class="axis top">0:00 <span>1:30</span><span>3:00</span></div>
+                <div class="cutoff">15.8 kHz</div>
+                <div class="heatmap"></div>
+                <div class="legend"><span></span><em>low</em><em>peak</em></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section class="trust-band" aria-label="Highlights">
+        <div><strong>100% local</strong><span>No account, backend, or upload.</span></div>
+        <div><strong>Playlist ready</strong><span>M3U, M3U8, folders, and Rekordbox XML.</span></div>
+        <div><strong>Finder tags</strong><span>Replace color tags with verdict colors.</span></div>
+      </section>
+
+      <section class="section-grid" id="workflow">
+        <div class="section-copy">
+          <p class="eyebrow">Built for large libraries</p>
+          <h2>Drop once. Review what matters.</h2>
+          <p>
+            Flaccer queues your music first, keeps the first track focused, then analyzes
+            files in the background so suspicious results are easy to filter, copy, reveal,
+            tag, or export.
+          </p>
+        </div>
+        <div class="feature-list">
+          <article>
+            <span class="feature-icon">01</span>
+            <h3>Import the way DJs work</h3>
+            <p>Scan one file, a full folder, an M3U playlist, or a Rekordbox XML library.</p>
+          </article>
+          <article>
+            <span class="feature-icon">02</span>
+            <h3>Group by verdict</h3>
+            <p>Filter fake, medium, lossless, and error results without digging through rows.</p>
+          </article>
+          <article>
+            <span class="feature-icon">03</span>
+            <h3>Act safely</h3>
+            <p>Reveal in Finder, copy paths, export CSV, and apply Finder color tags locally.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="evidence-section" id="evidence">
+        <div>
+          <p class="eyebrow">Trust surface</p>
+          <h2>Spectrograms that explain the verdict.</h2>
+          <p>
+            Verdicts are based on high-frequency energy, cutoff behavior, upper-band
+            emptiness, confidence, and sample-rate context. The graph is there so you can
+            inspect the evidence instead of blindly trusting a label.
+          </p>
+        </div>
+        <div class="evidence-card">
+          <div class="evidence-row"><strong>Brickwall</strong><span>38 dB drop near 15.8 kHz</span></div>
+          <div class="evidence-row"><strong>Upper band</strong><span>Nearly empty from cutoff to Nyquist</span></div>
+          <div class="evidence-row"><strong>Cutoff fit</strong><span>Common lossy signature range</span></div>
+        </div>
+      </section>
+
+      <section class="privacy-section" id="privacy">
+        <img src="assets/flaccer-icon.png" alt="">
+        <div>
+          <p class="eyebrow">Private by default</p>
+          <h2>Your music stays on your Mac.</h2>
+          <p>
+            Flaccer has no account system, analytics, telemetry, or network calls.
+            It reads local audio, computes local evidence, and updates local Finder tags.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Flaccer</span>
+      <span>Native macOS lossless triage.</span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
