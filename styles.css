@@ -19,6 +19,7 @@
 
 * {
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 html {
@@ -26,6 +27,7 @@ html {
   scrollbar-width: none;
 }
 
+*::-webkit-scrollbar,
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   width: 0;
@@ -39,6 +41,7 @@ body {
   color: var(--text);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
   letter-spacing: 0;
+  overflow-x: hidden;
   -ms-overflow-style: none;
 }
 
