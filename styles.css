@@ -190,6 +190,14 @@ h3 {
   margin-top: 30px;
 }
 
+.download-note {
+  color: var(--dim);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
