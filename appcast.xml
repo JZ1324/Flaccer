@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>Flaccer</title>
+        <item>
+            <title>1.0</title>
+            <pubDate>Wed, 03 Jun 2026 20:57:23 +1000</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[# Flaccer 1.0
+
+Initial public preview build with local audio analysis, verdict grouping, Finder tags, CSV export, playlist imports, and Sparkle update support.
+]]></description>
+            <enclosure url="https://jz1324.github.io/Flaccer/downloads/Flaccer-1.0.dmg" length="4080678" type="application/octet-stream" sparkle:edSignature="ZJCN/HhXEVRvKrqcvCmzki8E9auKeKw8MGPdAODbFBVOb0GRP1+fiySt0HSRc2u8B+Zv6uXop8GZFB1eMxKNAQ=="/>
+        </item>
+    </channel>
+</rss>
