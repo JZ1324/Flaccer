@@ -3,16 +3,16 @@
     <channel>
         <title>Flaccer</title>
         <item>
-            <title>1.0</title>
-            <pubDate>Wed, 03 Jun 2026 20:57:23 +1000</pubDate>
-            <sparkle:version>1</sparkle:version>
-            <sparkle:shortVersionString>1.0</sparkle:shortVersionString>
+            <title>1.0.1</title>
+            <pubDate>Thu, 04 Jun 2026 12:58:06 +1000</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>26.0</sparkle:minimumSystemVersion>
-            <description sparkle:format="markdown"><![CDATA[# Flaccer 1.0
+            <description sparkle:format="markdown"><![CDATA[# Flaccer 1.0.1
 
-Initial public preview build with local audio analysis, verdict grouping, Finder tags, CSV export, playlist imports, and Sparkle update support.
+Adds a Flaccer-branded forced update gate with 24-hour offline grace, custom progress UI, and required Sparkle update handling before scanning unlocks.
 ]]></description>
-            <enclosure url="https://jz1324.github.io/Flaccer/downloads/Flaccer-1.0.dmg" length="4080678" type="application/octet-stream" sparkle:edSignature="ZJCN/HhXEVRvKrqcvCmzki8E9auKeKw8MGPdAODbFBVOb0GRP1+fiySt0HSRc2u8B+Zv6uXop8GZFB1eMxKNAQ=="/>
+            <enclosure url="https://jz1324.github.io/Flaccer/downloads/Flaccer-1.0.1.dmg" length="4188069" type="application/octet-stream" sparkle:edSignature="lKYRhjKjkVq6DCvEplr6BOL7IXFJmmH87yYPqzZnd2BaMixusIdv2qg/oALmFSAFeW54FKxlgpysZY8zG6oPAQ=="/>
         </item>
     </channel>
 </rss>
